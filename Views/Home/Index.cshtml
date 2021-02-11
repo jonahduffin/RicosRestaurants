@@ -1,0 +1,18 @@
+﻿@{
+}
+
+@model IEnumerable<string>
+
+<div class="text-center">
+    <h1>Welcome to Rico's Tasty Restaurants</h1>
+    <p style="width:800px;text-align:center;margin-left:auto;margin-right:auto;">If you're looking for 5 of the best restaurants in the continental United States, look no further. Here are my top 5 suggestions 
+    for the best restaurants one can find! Also be sure to submit your own restaurant suggestions, and check out what other users have submitted.</p>
+</div>
+<div class="list-group">
+    <ul>
+        @foreach (string r in Model)
+        {
+            <li class="list-group-item bg-dark text-white">@r</li>
+        }
+    </ul>
+</div>

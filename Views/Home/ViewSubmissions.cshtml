@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<RicosRestaurants.Models.RestaurantSubmission>
+
+<table class="table table-dark">
+    <thead>
+        <tr><th>Submitted By</th><th>Restaurant Name</th><th>Favorite Dish</th><th>Restaurant Phone</th></tr>
+    </thead>
+    <tbody>
+        @foreach (RicosRestaurants.Models.RestaurantSubmission submissions in Model)
+        {
+           
+                <tr>
+                    <td>@submissions.submitterName</td>
+                    <td>@submissions.restaurantName</td>
+                    @if (submissions.favoriteDish != "" & submissions.favoriteDish != null)
+                        {
+                        <td>@submissions.favoriteDish</td>
+                        }
+                    else 
+                        {
+                        <td>It's all tasty!</td>
+                        }
+                    <td>@submissions.restaurantPhone</td>
+                </tr>
+        }
+    </tbody>
+</table>
